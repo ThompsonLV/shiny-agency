@@ -1,5 +1,7 @@
 function Results() {
-  return <div>Page de resultats</div>;
+
+
+  return <div>Page de resultats</div>
 }
 
-export default Results;
+export default Results

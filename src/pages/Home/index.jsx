@@ -1,7 +1,7 @@
 import HomeIllustration from '../../assets/home-illustration.svg'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors.js'
-import StyledLink from '../../utils/style/atoms.js'
+import { StyledLink } from '../../utils/style/atoms.js'
 
 const HomeWrapper = styled.div`
   display: flex;
