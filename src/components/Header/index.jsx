@@ -1,26 +1,37 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import colors from '../../utils/colors/colors.js'
+import colors from '../../utils/style/colors.js'
+import DarkLogo from '../../assets/dark-logo.png'
+import StyledLink from '../../utils/style/atoms.js'
 
 // Je peux styliser les éléments de ma bibliothèque
-const StyledLink = styled(Link)`
-  padding: 15px;
-  color: #8186a0;
-  text-decoration: none;
-  font-size: 18px;
-  ${(props)=>
-    props.$isFullLink &&
-    `color: white; border-radius: 30px; background-color: ${colors.primary};`
-  }
+
+const StyledImage = styled.img`
+  width: 190px;
+`
+
+const NavContainer = styled.nav`
+  display: flex;
+  padding: 14px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid ${colors.primary};
 `
 
 function Header() {
   return (
-    <nav>
-      <StyledLink to="/">Accueil</StyledLink>
-      <StyledLink to="/survey/1" $isFullLink>Faire le test</StyledLink>
-      <StyledLink to="/freelances">Freelances</StyledLink>
-    </nav>
+    <NavContainer>
+      <div>
+        <StyledImage src={DarkLogo} alt="logo" />
+      </div>
+      <div>
+        <StyledLink to="/">Accueil</StyledLink>
+        <StyledLink to="/freelances">Freelances</StyledLink>
+        <StyledLink to="/survey/1" $isFullLink>
+          Faire le test
+        </StyledLink>
+      </div>
+    </NavContainer>
   )
 }
 
