@@ -14,7 +14,7 @@ import Error from './components/Error'
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Header />
+      <Header /> {/* Layout fait parti du router pour être présent sur toutes les pages */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/survey/:questionNumber" element={<Survey />} />
