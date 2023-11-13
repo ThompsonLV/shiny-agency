@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import colors from '../../utils/style/colors.js'
 import DarkLogo from '../../assets/dark-logo.png'
 import StyledLink from '../../utils/style/atoms.js'
 
@@ -15,7 +13,6 @@ const NavContainer = styled.nav`
   padding: 14px;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid ${colors.primary};
 `
 
 function Header() {

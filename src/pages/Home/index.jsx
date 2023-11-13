@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-import Illustration from '../../assets/home-illustration.svg'
+import HomeIllustration from '../../assets/home-illustration.svg'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors.js'
 import StyledLink from '../../utils/style/atoms.js'
@@ -7,7 +6,7 @@ import StyledLink from '../../utils/style/atoms.js'
 const HomeWrapper = styled.div`
   display: flex;
   background-color: ${colors.backgroundLight};
-  padding: 50px;
+  padding: 90px 50px;
   margin: 48px;
 `
 
@@ -26,6 +25,10 @@ const LeftColumn = styled.div`
     max-width: 150px;
 `
 
+const Illustration = styled.img`
+  flex: 1;
+`
+
 function Home() {
   return (
     <HomeWrapper>
@@ -37,9 +40,10 @@ function Home() {
           Faire le test
         </StyledLink>
       </LeftColumn>
-      <rightColumn>
-        <img src={Illustration} alt="illustration"></img>
-      </rightColumn>
+      <Illustration
+        src={HomeIllustration}
+        alt="home-illustration"
+      ></Illustration>
     </HomeWrapper>
   )
 }

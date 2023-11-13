@@ -1,12 +1,31 @@
 import DefaultPicture from '../../assets/profile.png'
 import Card from '../../components/Card'
 import styled from 'styled-components'
+import color from '../../utils/style/colors'
+
+const HomeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 
 const CardContainer = styled.div`
   display: grid;
-  gap: 24px;
+  gap: 32px;
   grid-template-rows: 350px 350px;
   grid-template-columns: repeat(2, 1fr);
+`
+
+const Title = styled.h2`
+  font-size: 30px;
+  margin-bottom: 32px;
+`
+
+const SubTitle = styled.h2`
+  font-size: 20px;
+  color: ${color.lightGray};
+  margin-bottom: 32px;
 `
 
 const freelanceProfiles = [
@@ -16,8 +35,23 @@ const freelanceProfiles = [
     picture: DefaultPicture,
   },
   {
-    name: 'John Doe',
+    name: 'Alberto Contador',
     jobTitle: 'Developpeur frontend',
+    picture: DefaultPicture,
+  },
+  {
+    name: 'Jeanne Biche',
+    jobTitle: 'Développeuse Fullstack',
+    picture: DefaultPicture,
+  },
+  {
+    name: 'Jeanne Biche',
+    jobTitle: 'Développeuse Fullstack',
+    picture: DefaultPicture,
+  },
+  {
+    name: 'Jeanne Biche',
+    jobTitle: 'Développeuse Fullstack',
     picture: DefaultPicture,
   },
   {
@@ -29,8 +63,11 @@ const freelanceProfiles = [
 
 function Freelance() {
   return (
-    <div>
-      <h1>Freelances</h1>
+    <HomeWrapper>
+      <Title>Trouvez votre prestataire</Title>
+      <SubTitle>
+        Chez Shiny nous réunissons les meilleurs profils pour vous.
+      </SubTitle>
       <CardContainer>
         {freelanceProfiles.map((profile, index) => (
           <Card
@@ -40,7 +77,7 @@ function Freelance() {
           />
         ))}
       </CardContainer>
-    </div>
+    </HomeWrapper>
   )
 }
 

@@ -5,23 +5,33 @@ import colors from '../../utils/style/colors'
 
 // Création d'un composant stylisé
 const CardLabel = styled.span`
-  color: #5843e4;
+  color: ${colors.violet};
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 400;
+  margin-bottom: 32px;
 `
 const CardImage = styled.img`
-  height: 80px;
-  width: 80px;
+  height: 148px;
+  width: 148px;
   border-radius: 50%;
+  align-self: center;
+  margin-bottom: 32px;
+  object-fit: cover;
+`
+
+const CartName = styled.span`
+  align-self: center;
+  font-size: 22px;
 `
 
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 32px;
   background-color: ${colors.backgroundLight};
   border-radius: 30px;
-  width: 350px;
+  width: 300px;
+  height: 300px;
   transition: 200ms;
   &:hover {
     cursor: pointer;
@@ -34,7 +44,7 @@ function Card({ label, title, picture }) {
     <CardWrapper>
       <CardLabel>{label}</CardLabel>
       <CardImage src={picture} alt="freelance" />
-      <span>{title}</span>
+      <CartName>{title}</CartName>
     </CardWrapper>
   )
 }
