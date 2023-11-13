@@ -38,6 +38,7 @@ function Survey() {
   const [isDataLoading, setDataIsLoading] = useState(false)
 
   useEffect(() => {
+    setDataIsLoading(true)
     fetch(`http://localhost:8000/survey`)
       .then((response) => response.json())
       .then(({ surveyData }) => {

@@ -36,7 +36,7 @@ function Home() {
         <StyledTitle>
           Repérez vos besoins, on s’occupe du reste, avec les meilleurs talents{' '}
         </StyledTitle>
-        <StyledLink to="/survey" $isFullLink>
+        <StyledLink to="/survey/1" $isFullLink>
           Faire le test
         </StyledLink>
       </LeftColumn>
