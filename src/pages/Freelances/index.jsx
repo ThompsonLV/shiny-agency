@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import color from '../../utils/style/colors'
 import { Loader } from '../../utils/style/Atoms'
 import { useFetch } from '../../utils/hooks'
+import { useTheme } from '../../utils/hooks'
+
+console.log('useTheme', useTheme)
 
 // Création des composants stylisés
 const HomeWrapper = styled.div`
