@@ -75,8 +75,6 @@ function Results() {
     `http://localhost:8000/results?${fetchParams}`,
   )
 
-  console.log('data', data)
-
   if (error) {
     return <span>Oups il y a eu un problème</span>
   }

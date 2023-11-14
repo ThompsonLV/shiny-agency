@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+// Mise en place de l'appel à l'API
 export function useFetch(url) {
   const [data, setData] = useState({})
   const [isLoading, setLoading] = useState(true)
