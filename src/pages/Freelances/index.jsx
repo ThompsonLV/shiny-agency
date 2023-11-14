@@ -3,7 +3,7 @@ import Card from '../../components/Card'
 import styled from 'styled-components'
 import color from '../../utils/style/colors'
 import { useState, useEffect } from 'react'
-import { Loader } from '../../utils/style/atoms'
+import { Loader } from '../../utils/style/Atoms'
 
 // Création des composants stylisés
 const HomeWrapper = styled.div`
@@ -44,6 +44,7 @@ function Freelance() {
       try {
         // On utilise le mot clé await pour attendre la réponse de l'API
         const response = await fetch(`http://localhost:8000/freelances`)
+        // On utilise le mot clé await pour attendre la conversion des données en JSON
         const { freelancersList } = await response.json()
         setFreelancesList(freelancersList)
       } catch (err) {

@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import { Loader } from '../../utils/style/atoms'
+import { Loader } from '../../utils/style/Atoms'
 
 const SurveyContainer = styled.div`
   display: flex;
@@ -51,7 +51,7 @@ function Survey() {
     <SurveyContainer>
       <QuestionTitle>Question {questionNumber}</QuestionTitle>
       {isDataLoading ? (
-        <Loader/>
+        <Loader />
       ) : (
         <QuestionContent>{surveyData[questionNumber]}</QuestionContent>
       )}

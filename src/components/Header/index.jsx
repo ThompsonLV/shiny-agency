@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import DarkLogo from '../../assets/dark-logo.png'
-import { StyledLink } from '../../utils/style/atoms.js'
+import { StyledLink } from '../../utils/style/Atoms.js'
 
 // Je peux styliser les éléments de ma bibliothèque
 

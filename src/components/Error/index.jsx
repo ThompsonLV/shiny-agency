@@ -21,8 +21,8 @@ const Illustration = styled.img`
 `
 
 const StyledTitle = styled.h2`
-margin-bottom: 32px;
-color: ${colors.secondary};
+  margin-bottom: 32px;
+  color: ${colors.secondary};
 `
 
 function Error() {
