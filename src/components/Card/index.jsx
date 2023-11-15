@@ -2,10 +2,11 @@ import PropTypes from 'prop-types'
 import DefaultPicture from '../../assets/profile.png'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
+import { useTheme } from '../../utils/hooks'
 
 // Création d'un composant stylisé
 const CardLabel = styled.span`
-  color: ${colors.violet};
+  color: ${({ theme }) => (theme === 'light' ? colors.violet : '#ffffff')};
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 32px;
@@ -22,13 +23,15 @@ const CardImage = styled.img`
 const CartName = styled.span`
   align-self: center;
   font-size: 22px;
+  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
 `
 
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 32px;
-  background-color: ${colors.backgroundLight};
+  background-color: ${({ theme }) =>
+    theme === 'light' ? colors.backgroundLight : colors.backgroundDark};
   border-radius: 30px;
   width: 300px;
   height: 300px;
@@ -40,11 +43,12 @@ const CardWrapper = styled.div`
 `
 
 function Card({ label, title, picture }) {
+  const { theme } = useTheme()
   return (
-    <CardWrapper>
-      <CardLabel>{label}</CardLabel>
+    <CardWrapper theme={theme}>
+      <CardLabel theme={theme}>{label}</CardLabel>
       <CardImage src={picture} alt="freelance" />
-      <CartName>{title}</CartName>
+      <CartName theme={theme}>{title}</CartName>
     </CardWrapper>
   )
 }

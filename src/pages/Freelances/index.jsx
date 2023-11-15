@@ -3,8 +3,7 @@ import Card from '../../components/Card'
 import styled from 'styled-components'
 import color from '../../utils/style/colors'
 import { Loader } from '../../utils/style/Atoms'
-import { useFetch } from '../../utils/hooks'
-import { useTheme } from '../../utils/hooks'
+import { useFetch, useTheme } from '../../utils/hooks'
 
 console.log('useTheme', useTheme)
 
@@ -26,16 +25,18 @@ const CardContainer = styled.div`
 const Title = styled.h2`
   font-size: 30px;
   margin-bottom: 32px;
+  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
 `
 
 const SubTitle = styled.h2`
   font-size: 20px;
   color: ${color.lightGray};
   margin-bottom: 32px;
+  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
 `
 // Création du composant
 function Freelance() {
-
+  const { theme } = useTheme()
   const { isLoading, data, error } = useFetch(
     `http://localhost:8000/freelances`,
     )
@@ -53,8 +54,8 @@ function Freelance() {
 
   return (
     <HomeWrapper>
-      <Title>Trouvez votre prestataire</Title>
-      <SubTitle>
+      <Title theme={theme}>Trouvez votre prestataire</Title>
+      <SubTitle theme={theme}>
         Chez Shiny nous réunissons les meilleurs profils pour vous.
       </SubTitle>
       {isLoading ? (

@@ -1,11 +1,12 @@
 import ErrorPage from '../../assets/404.jpg'
 import styled from 'styled-components'
-import colors from '../../utils/style/colors'
+import { useTheme } from '../../utils/hooks'
 
 const ErrorWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${colors.backgroundLight};
+  background-color: ${({ theme }) =>
+    theme === 'light' ? '#ffffff' : '#000000'};
   padding: 50px 50px;
   margin: 0 48px;
   align-items: center;
@@ -22,14 +23,17 @@ const Illustration = styled.img`
 
 const StyledTitle = styled.h2`
   margin-bottom: 32px;
-  color: ${colors.secondary};
+  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
 `
 
 function Error() {
+  const { theme } = useTheme()
   return (
-    <ErrorWrapper>
-      <StyledTitle>Oups ...</StyledTitle>
-      <StyledTitle>Il semblerait qu'il y ait un problème</StyledTitle>
+    <ErrorWrapper theme={theme}>
+      <StyledTitle theme={theme}>Oups ...</StyledTitle>
+      <StyledTitle theme={theme}>
+        Il semblerait qu'il y ait un problème
+      </StyledTitle>
       <Illustration src={ErrorPage} alt="error-img" />
     </ErrorWrapper>
   )

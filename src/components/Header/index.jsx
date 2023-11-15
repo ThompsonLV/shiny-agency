@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import DarkLogo from '../../assets/dark-logo.png'
+import LightLogo from '../../assets/light-logo.png'
 import { StyledLink } from '../../utils/style/Atoms.js'
+import { useTheme } from '../../utils/hooks'
 
 // Je peux styliser les éléments de ma bibliothèque
 
@@ -16,10 +18,11 @@ const NavContainer = styled.nav`
 `
 
 function Header() {
+  const { theme } = useTheme()
   return (
     <NavContainer>
       <div>
-        <StyledImage src={DarkLogo} alt="logo" />
+        <StyledImage src={theme === 'ligth' ? DarkLogo : LightLogo} alt="logo"  />
       </div>
       <div>
         <StyledLink to="/">Accueil</StyledLink>
