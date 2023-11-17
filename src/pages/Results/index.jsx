@@ -62,7 +62,7 @@ export function formatJobList(title, listLength, index) {
   return `${title}, `
 }
 
-function formatFetchParams(answers) {
+export function formatFetchParams(answers) {
   const answerNumbers = Object.keys(answers)
 
   return answerNumbers.reduce((previousParams, answerNumber, index) => {
